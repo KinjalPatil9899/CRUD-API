@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "node ./bin/www", 
+    "start:dev": "nodemon ./bin/www --mode=development",
+    "start:prod": "npm run build && node ./bin/www --mode=production",
+    "build": "webpack --config webpack.config.js",
     "start:multi": "node app-multi.js"
   },
   "dependencies": {
